@@ -58,7 +58,7 @@ const Contact = () => {
               data-aos="fade-up"
               gutterBottom
             >
-              Get in touch
+              Contact Me
             </Typography>
             <Typography
               variant="h6"

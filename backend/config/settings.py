@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,7 +15,7 @@ SECRET_KEY = 'django-insecure-kngepvxt6e582&9*-xvhcln0uo!k*^%tm_@5uw42inc-h@6$lh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangobackendapp.herokuapp.com']
 
 
 # Application definition
@@ -39,10 +40,12 @@ INSTALLED_APPS = [
   'contact',
   'hero',
   'footer',
+  'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
   'corsheaders.middleware.CorsMiddleware',
+  'whitenoise.middleware.WhiteNoiseMiddleware',
   'django.middleware.security.SecurityMiddleware',
   'django.contrib.sessions.middleware.SessionMiddleware',
   'django.middleware.common.CommonMiddleware',
@@ -136,5 +139,5 @@ CORS_ALLOWED_ORIGINS = [
   'http://localhost:3000'
 ]
 
-
+django_heroku.settings(locals())
 FILE_UPLOAD_PERMISSIONS=0o640

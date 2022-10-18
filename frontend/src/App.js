@@ -9,25 +9,21 @@ import theme from "./theme/theme";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 
-const App = () => {  
-  return (
-    <HelmetProvider>
-      <Helmet 
-        titleTemplate="%s | Bob's Programming Academy"
-        defaultTitle="Bob's Programming Academy"
-      />
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+const App = () => {
+    return ( 
+<HelmetProvider>
+        <Helmet titleTemplate = "%s | MubarakaB"
+        defaultTitle = "MubarakaB"/>
+        <ThemeProvider theme = { theme }>
+        <CssBaseline/>
         <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route exact path='/' element={<Home />} />
-            </Routes>
-          </Layout>
-        </BrowserRouter>
-      </ThemeProvider>
-    </HelmetProvider>
-  );
+        <Layout>
+        <Routes>
+        <Route exact path = '/'
+        element = { < Home/> }/> 
+</Routes> </Layout> </BrowserRouter> </ThemeProvider> 
+</HelmetProvider>
+    );
 };
 
 export default App;
